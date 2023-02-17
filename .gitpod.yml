@@ -1,6 +1,9 @@
+image: gitpod/workspace-full
+
 tasks:
   - name: Build
     init: |
+      docker pull postgres:15-alpine
       docker-compose build
     command: |
       printf "Waiting for Voting App at $(gp url 5000) ...\n"
